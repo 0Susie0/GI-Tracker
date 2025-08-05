@@ -47,23 +47,25 @@ function ProfileStackNavigator() {
 
 export default function AppNavigator() {
   return (
-    <Tab.Navigator
-      screenOptions={({ route }) => ({
-        headerShown: false,
-        tabBarIcon: ({ color, size }) => {
-          if (route.name === 'Tracking') {
-            return <MaterialCommunityIcons name="food-apple" size={size} color={color} />;
-          } else if (route.name === 'Progress') {
-            return <FontAwesome5 name="chart-line" size={size} color={color} />;
-          } else if (route.name === 'Profile') {
-            return <Ionicons name="person" size={size} color={color} />;
-          }
-        },
-      })}
-    >
-      <Tab.Screen name="Tracking" component={TrackingStackNavigator} />
-      <Tab.Screen name="Progress" component={ProgressStackNavigator} />
-      <Tab.Screen name="Profile" component={ProfileStackNavigator} />
-    </Tab.Navigator>
+    <NavigationContainer>
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => {
+            if (route.name === 'Tracking') {
+              return <MaterialCommunityIcons name="food-apple" size={size} color={color} />;
+            } else if (route.name === 'Progress') {
+              return <FontAwesome5 name="chart-line" size={size} color={color} />;
+            } else if (route.name === 'Profile') {
+              return <Ionicons name="person" size={size} color={color} />;
+            }
+          },
+        })}
+      >
+        <Tab.Screen name="Tracking" component={TrackingStackNavigator} />
+        <Tab.Screen name="Progress" component={ProgressStackNavigator} />
+        <Tab.Screen name="Profile" component={ProfileStackNavigator} />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 }

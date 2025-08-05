@@ -1,4 +1,3 @@
-import { NavigationContainer } from '@react-navigation/native';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, View } from 'react-native';
@@ -29,9 +28,5 @@ export default function App() {
     );
   }
 
-  return (
-    <NavigationContainer>
-      {user ? <AppNavigator /> : <AuthNavigator />}
-    </NavigationContainer>
-  );
+  return user ? <AppNavigator /> : <AuthNavigator />;
 }
