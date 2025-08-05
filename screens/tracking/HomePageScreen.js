@@ -2,10 +2,10 @@
 // TODO: flesh out HomeScreen with real data, navigation, etc.
 import React, { useState } from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
-import FilterChips from '../components/FilterChips';
-import FoodCard from '../components/FoodCard';
-import Header from '../components/Header';
-import SearchBar from '../components/SearchBar';
+import FilterChips from '../../components/FilterChips';
+import FoodCard from '../../components/FoodCard';
+import Header from '../../components/Header';
+import SearchBar from '../../components/SearchBar';
 
 const mockFoods = [
   { name: 'Avocado Toast', image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836', calories: 250 },

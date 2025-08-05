@@ -2,9 +2,9 @@
 // TODO: flesh out Food Details with actions, more info, etc.
 import React from 'react';
 import { Image, ScrollView, StyleSheet, Text } from 'react-native';
-import Header from '../components/Header';
-import MacroSummary from '../components/MacroSummary';
-import PrimaryButton from '../components/PrimaryButton';
+import Header from '../../components/Header';
+import MacroSummary from '../../components/MacroSummary';
+import PrimaryButton from '../../components/PrimaryButton';
 
 const mockFood = {
   name: 'Avocado Toast',
