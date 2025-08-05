@@ -1,10 +1,11 @@
+import { NavigationContainer } from '@react-navigation/native';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, View } from 'react-native';
 
-import AppNavigator from '../navigation/AppNavigator';
-import AuthNavigator from '../navigation/AuthNavigator';
-import '../utils/firebase'; // Ensure Firebase is initialized
+import AppNavigator from './navigation/AppNavigator';
+import AuthNavigator from './navigation/AuthNavigator';
+import './utils/firebase'; // Ensure Firebase is initialized
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -28,5 +29,9 @@ export default function App() {
     );
   }
 
-  return user ? <AppNavigator /> : <AuthNavigator />;
+  return (
+    <NavigationContainer>
+      {user ? <AppNavigator /> : <AuthNavigator />}
+    </NavigationContainer>
+  );
 }
