@@ -1,6 +1,6 @@
 // screens/ProfileScreen.js
 // TODO: flesh out ProfileScreen with stats, edit, etc.
-import { getAuth, updateEmail } from 'firebase/auth';
+import { getAuth, signOut, updateEmail } from 'firebase/auth';
 import { doc, getDoc, getFirestore, setDoc } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
 import { Alert, StyleSheet, Text, View } from 'react-native';
@@ -77,6 +77,32 @@ export default function ProfileScreen() {
     }
   };
 
+  const handleLogout = async () => {
+    Alert.alert(
+      'Logout',
+      'Are you sure you want to logout?',
+      [
+        {
+          text: 'Cancel',
+          style: 'cancel',
+        },
+        {
+          text: 'Logout',
+          style: 'destructive',
+          onPress: async () => {
+            try {
+              const auth = getAuth();
+              await signOut(auth);
+              // Navigation will happen automatically via App.js useEffect when user state changes
+            } catch (error) {
+              Alert.alert('Error', 'Failed to logout. Please try again.');
+            }
+          },
+        },
+      ]
+    );
+  };
+
   if (loading) {
     return (
       <View style={styles.container}>
@@ -114,6 +140,11 @@ export default function ProfileScreen() {
           {bio ? <Text style={styles.bio}>{bio}</Text> : null}
           <MacroSummary macros={macros} />
           <PrimaryButton title="Edit Profile" onPress={() => setEditMode(true)} />
+          <PrimaryButton 
+            title="Logout" 
+            onPress={handleLogout}
+            style={{ backgroundColor: '#f44336', marginTop: 16 }}
+          />
         </>
       )}
     </View>

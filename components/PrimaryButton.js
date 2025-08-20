@@ -3,10 +3,14 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
-export default function PrimaryButton({ title, onPress }) {
+export default function PrimaryButton({ title, onPress, disabled = false, style }) {
   return (
-    <TouchableOpacity style={styles.button} onPress={onPress} activeOpacity={0.8}>
-      <Text style={styles.text}>{title}</Text>
+    <TouchableOpacity 
+      style={[styles.button, disabled && styles.disabledButton, style]} 
+      onPress={disabled ? null : onPress} 
+      activeOpacity={disabled ? 1 : 0.8}
+    >
+      <Text style={[styles.text, disabled && styles.disabledText]}>{title}</Text>
     </TouchableOpacity>
   );
 }
@@ -20,9 +24,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     margin: 12,
   },
+  disabledButton: {
+    backgroundColor: '#ccc',
+  },
   text: {
     color: '#fff',
     fontSize: 16,
     fontWeight: 'bold',
+  },
+  disabledText: {
+    color: '#666',
   },
 });

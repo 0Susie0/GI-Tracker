@@ -36,7 +36,7 @@ export default function SignUpScreen({ navigation }) {
     const auth = getAuth();
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      nav.replace('Tracking');
+      // Navigation will happen automatically via App.js useEffect when user state changes
     } catch (error) {
       Alert.alert('Sign Up Error', error.message);
     } finally {

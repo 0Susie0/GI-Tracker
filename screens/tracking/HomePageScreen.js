@@ -15,7 +15,7 @@ const mockFoods = [
 ];
 const filters = ['All', 'Breakfast', 'Lunch', 'Dinner'];
 
-export default function HomeScreen() {
+export default function HomePageScreen() {
   const [search, setSearch] = useState('');
   const [selected, setSelected] = useState('All');
   return (

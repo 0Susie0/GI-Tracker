@@ -24,7 +24,7 @@ export default function LoginScreen({ navigation }) {
     const auth = getAuth();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      nav.replace('Tracking');
+      // Navigation will happen automatically via App.js useEffect when user state changes
     } catch (error) {
       Alert.alert('Login Error', error.message);
     } finally {
@@ -35,7 +35,8 @@ export default function LoginScreen({ navigation }) {
   const handleGuestEntry = async () => {
     try {
       await AsyncStorage.setItem('userMode', 'guest');
-      nav.replace('Tracking');
+      // For guest mode, we'll need to modify App.js to handle this case
+      Alert.alert('Info', 'Guest mode will be implemented in future update. Please create an account for now.');
     } catch (error) {
       Alert.alert('Error', 'Unable to continue as guest. Please try again.');
     }
