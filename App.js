@@ -1,19 +1,17 @@
 import { NavigationContainer } from '@react-navigation/native';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { onAuthStateChanged } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, Text, View } from 'react-native';
 
 import AppNavigator from './navigation/AppNavigator';
 import AuthNavigator from './navigation/AuthNavigator';
-import './utils/firebase'; // Ensure Firebase is initialized
+import { auth } from './utils/firebase'; // Import the configured auth instance
 
 export default function App() {
   const [user, setUser] = useState(null);
   const [authChecked, setAuthChecked] = useState(false);
 
   useEffect(() => {
-    const auth = getAuth();
-    
     // Set a timeout to prevent indefinite loading
     const timeout = setTimeout(() => {
       console.log('Auth check timeout - proceeding without auth');
@@ -23,6 +21,9 @@ export default function App() {
     const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
       console.log('Auth state changed:', firebaseUser ? 'User logged in' : 'No user');
       clearTimeout(timeout);
+      
+      // Auto-login: Set user regardless of email verification status
+      // The individual screens can handle email verification requirements
       setUser(firebaseUser);
       setAuthChecked(true);
     });

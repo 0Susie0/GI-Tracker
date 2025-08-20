@@ -1,13 +1,13 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useState } from 'react';
 import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 import Header from '../../components/Header';
 import InputField from '../../components/InputField';
 import PrimaryButton from '../../components/PrimaryButton';
-import '../../utils/firebase'; // Ensures Firebase is initialized
+import { auth } from '../../utils/firebase'; // Import the configured auth instance
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState('');
@@ -21,7 +21,6 @@ export default function LoginScreen({ navigation }) {
       return;
     }
     setLoading(true);
-    const auth = getAuth();
     try {
       await signInWithEmailAndPassword(auth, email, password);
       // Navigation will happen automatically via App.js useEffect when user state changes

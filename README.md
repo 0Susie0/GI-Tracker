@@ -14,8 +14,15 @@ GI Tracker helps users monitor their food intake by focusing on glycemic index v
 ## ✨ Features
 
 ### 🔐 Authentication
-- **User Registration & Login**: Secure Firebase authentication
-- **Guest Mode**: Try the app without creating an account
+- **Enhanced User Registration**: 
+  - Real-time form validation with visual feedback
+  - Password strength checker with security requirements
+  - Terms of Service acceptance with modal viewer
+  - Email verification flow with automatic verification detection
+  - Auto-login after successful account creation
+- **Secure Login**: Firebase authentication with enhanced error handling
+- **Email Verification**: Comprehensive email verification system with resend capabilities
+- **Guest Mode**: Try the app without creating an account (placeholder)
 - **Profile Management**: Edit personal information and dietary preferences
 
 ### 📱 Food Tracking
@@ -91,25 +98,32 @@ GI Tracker helps users monitor their food intake by focusing on glycemic index v
 
 ```
 GI_Tracker/
-├── app/                    # Main app entry point
-│   └── App.js             # Root component with navigation
-├── navigation/            # Navigation configuration
-│   ├── AppNavigator.js    # Main app navigation (tabs)
-│   └── AuthNavigator.js   # Authentication navigation
-├── screens/               # All app screens
-│   ├── auth/             # Login/Signup screens
-│   ├── tracking/         # Food tracking screens
-│   ├── progress/         # Progress monitoring screens
-│   └── profile/          # User profile screens
-├── components/           # Reusable UI components
-│   ├── Header.js         # Page headers
-│   ├── FoodCard.js       # Food item display
-│   ├── ProgressChart.js  # Chart component
-│   └── ...              # Other UI components
-├── utils/               # Utility functions
-│   ├── firebase.js      # Firebase configuration
-│   └── constants.js     # App constants
-└── assets/             # Images and static assets
+├── app/                           # Main app entry point
+│   └── App.js                    # Root component with navigation
+├── navigation/                   # Navigation configuration
+│   ├── AppNavigator.js           # Main app navigation (tabs)
+│   └── AuthNavigator.js          # Authentication navigation (includes EmailVerification)
+├── screens/                      # All app screens
+│   ├── auth/                    # Authentication screens
+│   │   ├── LoginScreen.js       # User login
+│   │   ├── SignUpScreen.js      # Enhanced user registration
+│   │   └── EmailVerificationScreen.js  # Email verification flow
+│   ├── tracking/                # Food tracking screens
+│   ├── progress/                # Progress monitoring screens
+│   └── profile/                 # User profile screens
+├── components/                   # Reusable UI components
+│   ├── Header.js                # Page headers
+│   ├── FoodCard.js              # Food item display
+│   ├── ProgressChart.js         # Chart component
+│   ├── PasswordStrengthChecker.js  # Password strength validation
+│   ├── TermsOfService.js        # Terms of Service modal and checkbox
+│   ├── ValidatedInputField.js   # Enhanced input with real-time validation
+│   └── ...                     # Other UI components
+├── utils/                       # Utility functions
+│   ├── firebase.js             # Firebase configuration
+│   ├── emailVerification.js    # Email verification utilities
+│   └── constants.js            # App constants
+└── assets/                     # Images and static assets
 ```
 
 ## 🧪 Testing Your Build
@@ -123,10 +137,13 @@ Since you have an Android internal distribution build ready, here's how to test 
 
 ### Test Scenarios
 
-1. **Authentication Flow**
-   - Register new account
+1. **Enhanced Authentication Flow**
+   - Test new user registration with password strength validation
+   - Verify Terms of Service acceptance requirement
+   - Test email verification flow and resend functionality
+   - Test auto-login after successful registration
    - Login with existing credentials
-   - Try "Continue as Guest" option
+   - Try "Continue as Guest" option (placeholder)
    - Test logout functionality
 
 2. **Food Tracking Features**
@@ -145,13 +162,42 @@ Since you have an Android internal distribution build ready, here's how to test 
    - Update preferences
    - Test data synchronization
 
+## 🔒 Enhanced Authentication Features
+
+### Password Security
+- **Real-time strength checking**: Visual feedback for password complexity
+- **Security requirements**: Minimum 8 characters with uppercase, lowercase, and numbers
+- **Password confirmation**: Ensures passwords match before submission
+
+### Form Validation
+- **Real-time validation**: Instant feedback as users type
+- **Visual indicators**: Success/error states with icons and colors
+- **Comprehensive error messages**: Clear guidance for fixing validation issues
+
+### Email Verification
+- **Automatic verification detection**: Polls for verification status
+- **Resend functionality**: Rate-limited email resending with cooldown timer
+- **Manual verification check**: Users can manually check verification status
+- **Skip option**: Optional verification for immediate app access
+
+### Terms of Service
+- **Modal viewer**: Full terms displayed in scrollable modal
+- **Required acceptance**: Cannot create account without accepting terms
+- **Checkbox integration**: Clear visual indication of acceptance status
+
+### User Experience
+- **Auto-login**: Seamless login after successful registration
+- **Enhanced error handling**: Specific error messages for different failure scenarios
+- **Loading states**: Clear feedback during authentication processes
+- **Responsive design**: Works on various screen sizes
+
 ## ⚠️ Known Limitations
 
 1. **Camera Food Detection**: Currently uses mock data - real AI integration pending
 2. **Chart Library**: Basic chart implementation - consider upgrading to react-native-chart-kit
-3. **Data Validation**: Limited input validation in some forms
-4. **Offline Support**: No offline data caching implemented
-5. **Push Notifications**: Not yet implemented
+3. **Offline Support**: No offline data caching implemented
+4. **Push Notifications**: Not yet implemented
+5. **Guest Mode**: Placeholder implementation - full guest functionality pending
 
 ## 🔧 Development Notes
 
