@@ -48,7 +48,8 @@ GI Tracker helps users monitor their food intake by focusing on glycemic index v
 - **Navigation**: React Navigation (Stack & Bottom Tabs)
 - **Backend**: Firebase (Authentication, Firestore Database)
 - **State Management**: React Hooks (useState, useEffect)
-- **Styling**: React Native StyleSheet
+- **Styling**: React Native StyleSheet with Custom Theme System
+- **UI Components**: Expo Linear Gradient for enhanced visual design
 - **Icons**: Expo Vector Icons
 
 ## 🚀 Getting Started
@@ -122,6 +123,7 @@ GI_Tracker/
 ├── utils/                       # Utility functions
 │   ├── firebase.js             # Firebase configuration
 │   ├── emailVerification.js    # Email verification utilities
+│   ├── theme.js                # Design system and theme configuration
 │   └── constants.js            # App constants
 └── assets/                     # Images and static assets
 ```
@@ -190,6 +192,63 @@ Since you have an Android internal distribution build ready, here's how to test 
 - **Enhanced error handling**: Specific error messages for different failure scenarios
 - **Loading states**: Clear feedback during authentication processes
 - **Responsive design**: Works on various screen sizes
+
+## 🎨 Design System & Theme
+
+The app implements a comprehensive design system located in `utils/theme.js` that ensures consistent visual design across all components.
+
+### Theme Configuration
+
+```javascript
+// Color Palette
+colors = {
+  bg: "#F3F4FF",           // Light background
+  card: "#FFFFFF",         // Card/component background
+  text: "#111827",         // Primary text
+  subtext: "#6B7280",      // Secondary text
+  border: "#E6E8F2",       // Border color
+  link: "#4F46E5",         // Link color
+  accent: "#34D399",       // Accent/success color
+  primaryGradient: ["#7C3AED", "#5B6BFF"], // Primary gradient
+}
+
+// Border Radius
+radius = { sm: 8, md: 12, lg: 20, xl: 24 }
+
+// Spacing Function
+spacing(n) = 4 * n  // spacing(3) = 12px
+
+// Typography
+fonts = { title: 22, body: 16, caption: 12 }
+```
+
+### Enhanced UI Components
+
+All components have been updated with:
+- **Modern gradient designs** using expo-linear-gradient
+- **Consistent spacing** using the spacing function
+- **Card-based layouts** with shadows and borders
+- **Improved typography** with standardized font sizes
+- **Enhanced visual hierarchy** through color and spacing
+
+### Using the Theme System
+
+Import theme values in your components:
+```javascript
+import { colors, fonts, spacing, radius } from '../utils/theme';
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: colors.card,
+    padding: spacing(3),
+    borderRadius: radius.md,
+  },
+  text: {
+    color: colors.text,
+    fontSize: fonts.body,
+  }
+});
+```
 
 ## ⚠️ Known Limitations
 

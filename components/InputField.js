@@ -2,6 +2,7 @@
 // TODO: flesh out InputField with validation, icons, etc.
 import React from 'react';
 import { StyleSheet, TextInput, View } from 'react-native';
+import { colors, fonts, radius, spacing } from '../utils/theme';
 
 export default function InputField({ value, onChangeText, placeholder, secureTextEntry = false }) {
   return (
@@ -11,7 +12,7 @@ export default function InputField({ value, onChangeText, placeholder, secureTex
         value={value}
         onChangeText={onChangeText}
         placeholder={placeholder}
-        placeholderTextColor="#aaa"
+        placeholderTextColor={colors.subtext}
         secureTextEntry={secureTextEntry}
       />
     </View>
@@ -20,16 +21,16 @@ export default function InputField({ value, onChangeText, placeholder, secureTex
 
 const styles = StyleSheet.create({
   container: {
-    marginVertical: 8,
-    marginHorizontal: 12,
+    marginVertical: spacing(2),
+    marginHorizontal: spacing(3),
   },
   input: {
     borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 8,
-    padding: 12,
-    fontSize: 16,
-    backgroundColor: '#fff',
-    color: '#333',
+    borderColor: colors.border,
+    borderRadius: radius.md,
+    padding: spacing(3),
+    fontSize: fonts.body,
+    backgroundColor: colors.card,
+    color: colors.text,
   },
 });

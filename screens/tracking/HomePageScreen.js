@@ -6,6 +6,7 @@ import FilterChips from '../../components/FilterChips';
 import FoodCard from '../../components/FoodCard';
 import Header from '../../components/Header';
 import SearchBar from '../../components/SearchBar';
+import { colors, spacing } from '../../utils/theme';
 
 const mockFoods = [
   { name: 'Avocado Toast', image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836', calories: 250 },
@@ -29,12 +30,20 @@ export default function HomePageScreen() {
         renderItem={({ item }) => <FoodCard {...item} />}
         numColumns={2}
         contentContainerStyle={styles.grid}
+        showsVerticalScrollIndicator={false}
       />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#fff', paddingTop: 8 },
-  grid: { paddingHorizontal: 8 },
+  container: { 
+    flex: 1, 
+    backgroundColor: colors.bg, 
+    paddingTop: spacing(2) 
+  },
+  grid: { 
+    paddingHorizontal: spacing(2),
+    paddingBottom: spacing(4)
+  },
 });

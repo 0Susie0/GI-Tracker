@@ -2,6 +2,7 @@
 // TODO: flesh out FoodCard with favorite, rating, etc.
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
+import { colors, fonts, radius, spacing } from '../utils/theme';
 
 export default function FoodCard({ name, image, calories }) {
   return (
@@ -16,28 +17,36 @@ export default function FoodCard({ name, image, calories }) {
 const styles = StyleSheet.create({
   card: {
     flex: 1,
-    backgroundColor: '#f9f9f9',
-    borderRadius: 12,
-    margin: 8,
+    backgroundColor: colors.card,
+    borderRadius: radius.md,
+    margin: spacing(2),
     alignItems: 'center',
-    padding: 12,
+    padding: spacing(3),
     elevation: 2,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    borderWidth: 1,
+    borderColor: colors.border,
     minWidth: 140,
     maxWidth: 180,
   },
   image: {
     width: 80,
     height: 80,
-    borderRadius: 8,
-    marginBottom: 8,
+    borderRadius: radius.sm,
+    marginBottom: spacing(2),
   },
   name: {
-    fontSize: 16,
+    fontSize: fonts.body,
     fontWeight: 'bold',
-    marginBottom: 4,
+    color: colors.text,
+    marginBottom: spacing(1),
+    textAlign: 'center',
   },
   calories: {
-    fontSize: 14,
-    color: '#888',
+    fontSize: fonts.caption,
+    color: colors.subtext,
   },
 });

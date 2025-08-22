@@ -1,15 +1,22 @@
 // components/Header.js
 // TODO: flesh out header with navigation actions, logo, etc.
 import { Ionicons } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
+import { colors, fonts, spacing } from '../utils/theme';
 
 export default function Header({ title, icon = 'ios-restaurant' }) {
   return (
-    <View style={styles.header}>
+    <LinearGradient
+      colors={colors.primaryGradient}
+      start={{ x: 0, y: 0 }}
+      end={{ x: 1, y: 0 }}
+      style={styles.header}
+    >
       <Ionicons name={icon} size={24} color="#fff" style={styles.icon} />
       <Text style={styles.title}>{title}</Text>
-    </View>
+    </LinearGradient>
   );
 }
 
@@ -17,17 +24,16 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#4CAF50',
-    paddingVertical: 16,
-    paddingHorizontal: 20,
+    paddingVertical: spacing(4),
+    paddingHorizontal: spacing(5),
     width: '100%',
   },
   icon: {
-    marginRight: 12,
+    marginRight: spacing(3),
   },
   title: {
     color: '#fff',
-    fontSize: 22,
+    fontSize: fonts.title,
     fontWeight: 'bold',
   },
 });
