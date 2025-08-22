@@ -3,7 +3,7 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
-import { colors, fonts, radius, spacing } from '../utils/theme';
+import { colors, fonts, radius, spacing } from '../../utils/theme';
 
 export default function PrimaryButton({ title, onPress, disabled = false, style }) {
   if (disabled) {

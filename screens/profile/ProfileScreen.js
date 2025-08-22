@@ -4,11 +4,11 @@ import { getAuth, signOut, updateEmail } from 'firebase/auth';
 import { doc, getDoc, getFirestore, setDoc } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
 import { Alert, StyleSheet, Text, View } from 'react-native';
-import Avatar from '../../components/Avatar';
-import Header from '../../components/Header';
-import InputField from '../../components/InputField';
-import MacroSummary from '../../components/MacroSummary';
-import PrimaryButton from '../../components/PrimaryButton';
+import Avatar from '../../components/Basic/Avatar';
+import Header from '../../components/Basic/Header';
+import InputField from '../../components/Basic/InputField';
+import PrimaryButton from '../../components/Basic/PrimaryButton';
+import MacroSummary from '../../components/Statistic/MacroSummary';
 
 export default function ProfileScreen() {
   const [editMode, setEditMode] = useState(false);

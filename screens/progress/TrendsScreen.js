@@ -2,7 +2,7 @@ import { getAuth } from 'firebase/auth';
 import { collection, getDocs, getFirestore } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import ProgressChart from '../../components/ProgressChart';
+import ProgressChart from '../../components/Statistic/ProgressChart';
 
 function formatDate(date, mode) {
   const d = new Date(date);

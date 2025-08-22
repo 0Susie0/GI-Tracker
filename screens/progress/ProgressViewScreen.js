@@ -2,9 +2,9 @@
 // TODO: flesh out ProgressViewScreen with real chart, tabs, etc.
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import Header from '../../components/Header';
-import MacroSummary from '../../components/MacroSummary';
-import ProgressChart from '../../components/ProgressChart';
+import Header from '../../components/Basic/Header';
+import MacroSummary from '../../components/Statistic/MacroSummary';
+import ProgressChart from '../../components/Statistic/ProgressChart';
 
 const mockMacros = [
   { label: 'Protein', value: 80 },

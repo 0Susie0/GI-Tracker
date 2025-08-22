@@ -3,7 +3,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import React from 'react';
 import { StyleSheet, TextInput, View } from 'react-native';
-import { colors, fonts, radius, spacing } from '../utils/theme';
+import { colors, fonts, radius, spacing } from '../../utils/theme';
 
 export default function SearchBar({ value, onChangeText, placeholder = "Search..." }) {
   return (

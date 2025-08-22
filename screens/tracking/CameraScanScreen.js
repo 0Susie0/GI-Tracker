@@ -2,7 +2,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { Camera } from 'expo-camera';
 import React, { useEffect, useRef, useState } from 'react';
 import { ActivityIndicator, FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import FoodCard from '../../components/FoodCard';
+import FoodCard from '../../components/Food/FoodCard';
 
 // Placeholder API function
 async function detectFoodImage(imageUri) {

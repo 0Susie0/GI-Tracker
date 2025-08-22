@@ -4,9 +4,9 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useState } from 'react';
 import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-import Header from '../../components/Header';
-import InputField from '../../components/InputField';
-import PrimaryButton from '../../components/PrimaryButton';
+import Header from '../../components/Basic/Header';
+import InputField from '../../components/Basic/InputField';
+import PrimaryButton from '../../components/Basic/PrimaryButton';
 import { auth } from '../../utils/firebase'; // Import the configured auth instance
 
 export default function LoginScreen({ navigation }) {

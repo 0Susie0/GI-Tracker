@@ -3,8 +3,8 @@ import { collection, getDocs, getFirestore, query, where } from 'firebase/firest
 import debounce from 'lodash.debounce';
 import React, { useCallback, useState } from 'react';
 import { ActivityIndicator, FlatList, StyleSheet, Text, View } from 'react-native';
-import FoodCard from '../../components/FoodCard';
-import SearchBar from '../../components/SearchBar';
+import FoodCard from '../../components/Food/FoodCard';
+import SearchBar from '../../components/Search/SearchBar';
 
 export default function SearchScreen() {
   const [search, setSearch] = useState('');

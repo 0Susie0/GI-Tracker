@@ -3,8 +3,8 @@ import { getAuth } from 'firebase/auth';
 import { addDoc, collection, getFirestore } from 'firebase/firestore';
 import React, { useState } from 'react';
 import { Alert, StyleSheet, Text, View } from 'react-native';
-import InputField from '../../components/InputField';
-import PrimaryButton from '../../components/PrimaryButton';
+import InputField from '../../components/Basic/InputField';
+import PrimaryButton from '../../components/Basic/PrimaryButton';
 
 export default function GlucoseLogScreen() {
   const [value, setValue] = useState('');

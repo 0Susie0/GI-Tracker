@@ -2,7 +2,7 @@ import { getAuth } from 'firebase/auth';
 import { doc, getDoc, getFirestore, setDoc } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
 import { Alert, Platform, StyleSheet, Switch, Text, ToastAndroid, View } from 'react-native';
-import Header from '../../components/Header';
+import Header from '../../components/Basic/Header';
 
 const PREFERENCES = [
   { key: 'lowGI', label: 'Low GI' },

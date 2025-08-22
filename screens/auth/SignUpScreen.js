@@ -3,11 +3,11 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import React, { useState } from 'react';
 import { Alert, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-import Header from '../../components/Header';
-import PasswordStrengthChecker from '../../components/PasswordStrengthChecker';
-import PrimaryButton from '../../components/PrimaryButton';
-import TermsOfService, { TermsCheckbox } from '../../components/TermsOfService';
-import ValidatedInputField from '../../components/ValidatedInputField';
+import PasswordStrengthChecker from '../../components/Authentification/PasswordStrengthChecker';
+import TermsOfService, { TermsCheckbox } from '../../components/Authentification/TermsOfService';
+import ValidatedInputField from '../../components/Authentification/ValidatedInputField';
+import Header from '../../components/Basic/Header';
+import PrimaryButton from '../../components/Basic/PrimaryButton';
 import { sendVerificationEmail } from '../../utils/emailVerification';
 import { auth } from '../../utils/firebase'; // Import the configured auth instance
 

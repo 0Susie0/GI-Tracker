@@ -2,7 +2,7 @@
 // TODO: flesh out FoodCard with favorite, rating, etc.
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
-import { colors, fonts, radius, spacing } from '../utils/theme';
+import { colors, fonts, radius, spacing } from '../../utils/theme';
 
 export default function FoodCard({ name, image, calories }) {
   return (

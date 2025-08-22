@@ -1,20 +1,20 @@
 import { Ionicons } from '@expo/vector-icons';
 import React, { useEffect, useState } from 'react';
 import {
-    ActivityIndicator,
-    Alert,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
+  ActivityIndicator,
+  Alert,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from 'react-native';
 
-import Header from '../../components/Header';
-import PrimaryButton from '../../components/PrimaryButton';
+import Header from '../../components/Basic/Header';
+import PrimaryButton from '../../components/Basic/PrimaryButton';
 import {
-    checkEmailVerification,
-    resendVerificationEmail,
-    waitForEmailVerification,
+  checkEmailVerification,
+  resendVerificationEmail,
+  waitForEmailVerification,
 } from '../../utils/emailVerification';
 import { auth } from '../../utils/firebase'; // Import the configured auth instance
 

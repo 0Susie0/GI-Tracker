@@ -4,7 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
-import { colors, fonts, spacing } from '../utils/theme';
+import { colors, fonts, spacing } from '../../utils/theme';
 
 export default function Header({ title, icon = 'ios-restaurant' }) {
   return (

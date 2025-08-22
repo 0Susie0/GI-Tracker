@@ -2,7 +2,7 @@
 // TODO: flesh out InputField with validation, icons, etc.
 import React from 'react';
 import { StyleSheet, TextInput, View } from 'react-native';
-import { colors, fonts, radius, spacing } from '../utils/theme';
+import { colors, fonts, radius, spacing } from '../../utils/theme';
 
 export default function InputField({ value, onChangeText, placeholder, secureTextEntry = false }) {
   return (

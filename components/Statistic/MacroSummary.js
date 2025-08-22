@@ -2,7 +2,7 @@
 // TODO: flesh out MacroSummary with icons, progress bars, etc.
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { colors, fonts, radius, spacing } from '../utils/theme';
+import { colors, fonts, radius, spacing } from '../../utils/theme';
 
 export default function MacroSummary({ macros }) {
   return (
