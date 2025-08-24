@@ -7,7 +7,8 @@
     "icon": "./assets/images/icon.png",
     "scheme": "gitracker",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
+    "newArchEnabled": false,
+    "jsEngine": "jsc",
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.susiehu.gitracker",
